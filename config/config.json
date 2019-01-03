@@ -15,11 +15,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "root",
-    "database": "crimes_db",
-    "host": "127.0.0.1",
-    "port": 8889,
+    "username": "izh1tuqfppk2uo2z",
+    "password": "zqa79ygdyq6vgdt8",
+    "database": "mf8t7yymddkqmdo2",
+    "host": "alv4v3hlsipxnujn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "port": 3306,
     "dialect": "mysql",
     "use_env_variable": "JAWSDB_URL"
   }
