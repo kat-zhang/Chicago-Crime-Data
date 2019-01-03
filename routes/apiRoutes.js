@@ -11,10 +11,22 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/crime-data", function(req, res) {
+  app.get("/api/battery", function(req, res) {
     console.log("We have our route");
 
-    db.Crime.findAll({}).then(function(dbCrimes) {
+    db.Crime.findAll({
+      where: { PrimaryType: "BATTERY" }
+    }).then(function(dbCrimes) {
+      res.json(dbCrimes);
+    });
+  });
+
+  app.get("/api/theft", function(req, res) {
+    console.log("We have our route");
+
+    db.Crime.findAll({
+      where: { PrimaryType: "THEFT" }
+    }).then(function(dbCrimes) {
       res.json(dbCrimes);
     });
   });
