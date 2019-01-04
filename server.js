@@ -4,13 +4,18 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
-var express = require("express");
-
 // Sets up the Express App
 // =============================================================
-var app = express();
-var PORT = process.env.PORT || 3000;
+var express = require("express");
+var bodyparser = require("body-parser");
 
+var app = express();
+
+var PORT = process.env.PORT || 3000;
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 // Requiring our models for syncing
 var db = require("./models");
 
@@ -26,7 +31,7 @@ app.use(express.static("public"));
 
 require("./routes/apiRoutes")(app);
 
-// require("./routes/htmlRoutes.js")(app);
+require("./routes/htmlRoutes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
