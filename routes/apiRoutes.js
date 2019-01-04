@@ -10,7 +10,15 @@ var options = {
 };
 var geocoder = NodeGeocoder(options);
 
+
 module.exports = function (app) {
+  app.post('/comments', function(req, res){
+
+    console.log('WE ARE IN COMMENTS ROUTE!!', req.body)
+
+    db.Comment.create(req.body)
+
+  })
   //Battery from 2001-2018
   app.get("/api/battery-all", function (req, res) {
     db.Crime.findAndCountAll({
