@@ -8,6 +8,7 @@ module.exports = function (app) {
 
     app.get("/map", function (req, res) {
         res.render("map");
+    });
 
     app.get("/comments", function (req, res) {
         res.render("comments");
