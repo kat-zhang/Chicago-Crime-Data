@@ -17,6 +17,12 @@ module.exports = function(app) {
     db.Comment.create(req.body);
   });
 
+  app.get("/api/comments", function (req, res) {
+    db.Comment.findAll({}).then(function(dbComment){
+      res.json(dbComment);
+    })
+  });
+
   app.get("/api/crimes/:crime", function(req, res) {
     db.Crime.findAndCountAll({
       where: {
@@ -31,7 +37,7 @@ module.exports = function(app) {
           crime: req.params.crime
         }
       });
-      console.log(res.data.crime);
+      // console.log(res.data.crime);
     });
   });
 
