@@ -1,129 +1,108 @@
-var toalChartData = [];
+var totalChartData = [];
 var yearChartData = [];
 var crimeType = ["theft", "assault", "battery", "narcotics", "robbery"];
+var year = [2013, 2014, 2015, 2016, 2017, 2018];
 
-function getCrimeCount(crime) {
+function getCrimeCount(crime, year) {
   $.ajax({
     url: "/api/crimes/" + crime,
     type: "get"
   }).then(function(response) {
     console.log(response);
-    chartData.push({ toalCount: response.data.count });
-    console.log(chartData);
-  });
-}
-
-function getCrimeYear(crime, year) {
-  $.ajax({
-    url: "/api/crimes/" + crime,
-    type: "get"
-  }).then(function(response) {
-    console.log(response);
-    chartData.push({ toalCount: response.data.count });
-    console.log(chartData);
-  });
-}
-for (var i = 0; i < crimeType.length; i++) {
-  getCrimeCount(crimeType[i]);
-}
-
-// acalls();
-function acalls() {
-  $.ajax({
-    url: "/api/theft-13",
-    type: "get"
-  }).then(function(response) {
-    console.log(response);
-    chartData.push({ points: response });
-    $.ajax({
-      url: "/api/theft-14",
-      type: "get"
-    }).then(function(response) {
-      console.log(response);
-      chartData.push({ year2014: response });
-      $.ajax({
-        url: "/api/theft-15",
-        type: "get"
-      }).then(function(response) {
-        console.log(response);
-        chartData.push(response);
-        console.log(chartData);
-        var chart = AmCharts.makeChart("chartdiv", {
-          theme: "light",
-          type: "serial",
-          dataProvider: [
-            {
-              country: "Theft",
-              year2004: 3.5,
-              year2005: chartData[1].year2014
-            },
-            {
-              country: "UK",
-              year2004: 1.7,
-              year2005: 3.1
-            },
-            {
-              country: "Canada",
-              year2004: 2.8,
-              year2005: 2.9
-            },
-            {
-              country: "Japan",
-              year2004: 2.6,
-              year2005: 2.3
-            },
-            {
-              country: "France",
-              year2004: 1.4,
-              year2005: 2.1
-            },
-            {
-              country: "Brazil",
-              year2004: 2.6,
-              year2005: 4.9
-            }
-          ],
-          valueAxes: [
-            {
-              unit: "numbers",
-              position: "left",
-              title: "GDP growth rate"
-            }
-          ],
-          startDuration: 1,
-          graphs: [
-            {
-              balloonText: "GDP grow in [[category]] (2004): <b>[[value]]</b>",
-              fillAlphas: 0.9,
-              lineAlpha: 0.2,
-              title: "2004",
-              type: "column",
-              valueField: "year2004"
-            },
-            {
-              balloonText: "GDP grow in [[category]] (2005): <b>[[value]]</b>",
-              fillAlphas: 0.9,
-              lineAlpha: 0.2,
-              title: "2005",
-              type: "column",
-              clustered: false,
-              columnWidth: 0.5,
-              valueField: "year2005"
-            }
-          ],
-          plotAreaFillAlphas: 0.1,
-          categoryField: "country",
-          categoryAxis: {
-            gridPosition: "start"
-          },
-          export: {
-            enabled: true
-          }
-        });
-      });
+    totalChartData.push({ totalCount: response.data.count });
+    yearChartData.push({
+      year: parseInt(response.data.year)
     });
   });
 }
+
+console.log(totalChartData);
+console.log(yearChartData);
+
+for (var i = 0; i < crimeType.length; i++) {
+  getCrimeCount(crimeType[i], year[i]);
+}
+
+//     }).then(function(response) {
+//       console.log(response);
+//       chartData.push(response);
+//       console.log(chartData);
+//       var chart = AmCharts.makeChart("chartdiv", {
+//         theme: "light",
+//         type: "serial",
+//         dataProvider: [
+//           {
+//             country: "Theft",
+//             year2004: 3.5,
+//             year2005: chartData[1].year2014
+//           },
+//           {
+//             country: "UK",
+//             year2004: 1.7,
+//             year2005: 3.1
+//           },
+//           {
+//             country: "Canada",
+//             year2004: 2.8,
+//             year2005: 2.9
+//           },
+//           {
+//             country: "Japan",
+//             year2004: 2.6,
+//             year2005: 2.3
+//           },
+//           {
+//             country: "France",
+//             year2004: 1.4,
+//             year2005: 2.1
+//           },
+//           {
+//             country: "Brazil",
+//             year2004: 2.6,
+//             year2005: 4.9
+//           }
+//         ],
+//         valueAxes: [
+//           {
+//             unit: "numbers",
+//             position: "left",
+//             title: "GDP growth rate"
+//           }
+//         ],
+//         startDuration: 1,
+//         graphs: [
+//           {
+//             balloonText: "GDP grow in [[category]] (2004): <b>[[value]]</b>",
+//             fillAlphas: 0.9,
+//             lineAlpha: 0.2,
+//             title: "2004",
+//             type: "column",
+//             valueField: "year2004"
+//           },
+//           {
+//             balloonText: "GDP grow in [[category]] (2005): <b>[[value]]</b>",
+//             fillAlphas: 0.9,
+//             lineAlpha: 0.2,
+//             title: "2005",
+//             type: "column",
+//             clustered: false,
+//             columnWidth: 0.5,
+//             valueField: "year2005"
+//           }
+//         ],
+//         plotAreaFillAlphas: 0.1,
+//         categoryField: "country",
+//         categoryAxis: {
+//           gridPosition: "start"
+//         },
+//         export: {
+//           enabled: true
+//         }
+//       });
+//     });
+//   });
+// });
+// }
 
 // $.ajax({
 //   url: "/api/theft-17",
@@ -214,8 +193,6 @@ function acalls() {
 //     enabled: true
 //   }
 // });
-
-console.log(chartData);
 
 // am4core.useTheme(am4themes_animated);
 // // Themes end
