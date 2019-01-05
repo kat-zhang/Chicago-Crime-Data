@@ -12,6 +12,7 @@ var geocoder = NodeGeocoder(options);
 
 
 module.exports = function (app) {
+  // app.post('/api/comments', function(req, res){
   app.post('/comments', function(req, res){
 
     console.log('WE ARE IN COMMENTS ROUTE!!', req.body)
@@ -19,6 +20,19 @@ module.exports = function (app) {
     db.Comment.create(req.body)
 
   })
+
+  // app.get("/comments", function (req,res) {
+  //   db.Comment.findAll({
+  //     where: {
+  //       id: 
+  //       author: "author",
+  //       comment: "comment"
+
+
+  //     }
+  //   })
+  // })
+
   //Battery from 2001-2018
   app.get("/api/battery-all", function (req, res) {
     db.Crime.findAndCountAll({
