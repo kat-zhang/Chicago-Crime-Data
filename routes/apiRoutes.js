@@ -12,8 +12,8 @@ var geocoder = NodeGeocoder(options);
 
 
 module.exports = function (app) {
-  // app.post('/api/comments', function(req, res){
-  app.post('/comments', function(req, res){
+  app.post('/api/comments', function(req, res){
+  // app.post('/comments', function(req, res){
 
     console.log('WE ARE IN COMMENTS ROUTE!!', req.body)
 

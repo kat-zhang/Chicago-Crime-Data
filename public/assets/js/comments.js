@@ -10,19 +10,16 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: "/comments",
-            // url: "/api/comments",
+            // url: "/comments",
+            url: "/api/comments",
             type: "post",
             data: comment
           }).then(function(response) {
-            console.log("Comment posted"); 
-        });
+            console.log("Comment posted");
+           
+          });
         
-        
+        location.reload();
     })
-
-    function getComment () {
-        $.a
-    }
 
 });
