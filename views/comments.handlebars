@@ -1,9 +1,21 @@
+<h1></h1>
+
 <div id="pg-container"> 
-<h1> Leave a comment</h1>
-<p>Tell us your thoughts! How did this information make you feel?</p>
 
+<ul id="commentsdiv">
+  {{!-- {{#each comments}} --}}
+  	<div id ="newComment">
+  		<p><span class="label" id="commentNum">Comment #:</span> {{this.id}}</p>
+      <p><span class="label" id="commentPoster"></span> {{this.author}} says:</p>
+      <p><span class="label" id="commentText"></span> {{this.comment}}</p>
+  	</div>
+  {{!-- {{/comments}} --}}
+</ul>
+<hr>
 
-<h2>Add your comment</h2>
+<h4> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
+<p>Your comment:</p>
+
 
 <form class="create-form">
 
@@ -14,10 +26,11 @@
 
   <div class="form-group">
     <label for="quo">Comment:</label>
-    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
+    <textarea type="text" id="quo" name="quote" rows="8" cols="40"></textarea>
   </div>
 
  
 </form>
  <button id="saveButton" class="btn btn-primary">Submit</button>
+
 </div>
