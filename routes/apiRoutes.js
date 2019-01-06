@@ -62,19 +62,30 @@ module.exports = function (app) {
   });
 
   app.post("/test", function (req, res) {
-    console.log(req.body);
-
-    var address = req.body.address;
+    var address = req.body.address
     geocoder.geocode(address, function (err, data) {
       if (err || !data.length) {
         console.log(err);
-        req.flash("error", "Invalid address");
-        return res.redirect("back");
+        req.flash('error', 'Invalid address');
+        return res.redirect('back');
       }
-      var lat = data[0].latitude;
-      var lng = data[0].longitude;
-      // var location = data[0].formattedAddress;
+      // var lat = data[0].latitude;
+      // var lng = data[0].longitude;
+      var zip = data[0].zipcode;
+
+      db.Crime.findAll().then(function (data) {
+        var arr = [];
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].zipCode == zip) {
+            var Lat = data[i].Latitude;
+            var Lng = data[i].Longitude;
+            arr.push({ Lat, Lng });
+          }
+        }
+        arr = [];
+      })
+      // res.json(arr);
       res.json({ lat, lng });
-    });
-  });
+    })
+  })
 };
