@@ -1,4 +1,4 @@
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   var Crime = sequelize.define("Crime", {
     Crime_ID: {
       type: Sequelize.STRING
@@ -57,7 +57,7 @@ module.exports = function(sequelize, Sequelize) {
     Updated_On: {
       type: Sequelize.STRING
     },
-    Lattitude: {
+    Latitude: {
       type: Sequelize.STRING
     },
     Longitude: {
@@ -65,6 +65,9 @@ module.exports = function(sequelize, Sequelize) {
     },
     Location: {
       type: Sequelize.STRING
+    },
+    zipCode: {
+      type: Sequelize.INTEGER
     },
     createdAt: {
       allowNull: true,
