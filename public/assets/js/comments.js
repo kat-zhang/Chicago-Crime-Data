@@ -10,8 +10,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: "/comments",
-            // url: "/api/comments",
+            url: "/api/comments",
             type: "post",
             data: comment
           }).then(function(response) {

@@ -11,10 +11,16 @@ var options = {
 var geocoder = NodeGeocoder(options);
 
 module.exports = function (app) {
-  app.post("/comments", function (req, res) {
+  app.post("/api/comments", function (req, res) {
     console.log("WE ARE IN COMMENTS ROUTE!!", req.body);
 
     db.Comment.create(req.body);
+  });
+
+  app.get("/api/comments", function (req, res) {
+    db.Comment.findAll({}).then(function (dbComment) {
+      res.json(dbComment);
+    })
   });
 
   app.get("/api/crimes/:crime", function (req, res) {
