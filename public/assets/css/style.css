@@ -12,8 +12,7 @@ body {
 .btn-primary {
 
   border-color:  #f90f00;
-  background-color: ;
-  border-color:  #f90f00;
+  background-color:  #f90f00;
   transition: none;
 }
 #comments-page {
@@ -26,15 +25,15 @@ body {
   margin-top: 40px;
   text-align: center;
   font-size: 20px;
-  background-color:  #b3ddf3;
+
 }
 label {
-  background-color:  #b3ddf3;
+
   font-size: 16px;
   font-weight: bold;
 }
 .comment-form {
-  background-color: #b3ddf3;
+
   align-content: center;
   margin-right: auto;
   margin-left: auto;
@@ -69,9 +68,7 @@ background-color: #b3ddf3;
 }
 
 /* #f90f00 */
-* {
-  background-color: #ffffff;
-}
+
 .header {
   width: 100%;
   min-height: 300px;
