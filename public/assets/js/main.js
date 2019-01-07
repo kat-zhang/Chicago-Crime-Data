@@ -25,6 +25,7 @@ function getCrimeCount(crime, year) {
     });
 }
 
+//Console logs for arrays
 console.log(totalChartData);
 console.log(yearChartData);
 
