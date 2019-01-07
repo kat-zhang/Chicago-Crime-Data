@@ -29,17 +29,16 @@ module.exports = function(app) {
     });
   });
 
- 
 
-  // app.get("/comments", function(req, res) {
-  //   db.Comment.findAll({}).then(function(dbComment) {
-  //     if (err) {
-  //       return res.status(500).end();
-  //     }
-  
-  //     res.render("index", { comments: data });
-  //   });
-  // });
+  app.get("/comments", function(req, res) {
+    db.Comment.findAll({}).then(function(data) {
+    //  console.log(res, "FSDKLJFSDF")
+     console.log(data);
+      res.render("comments", { 
+        comments: data
+       });
+    });
+  });
 
   app.get("/api/crimes/:crime", function(req, res) {
     db.Crime.findAndCountAll({

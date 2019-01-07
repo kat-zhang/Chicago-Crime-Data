@@ -1,6 +1,19 @@
   * {
     background-color: #ffffff;
   } 
+
+/* #project-title {
+  border-radius: 0px;
+  border-color: #F8E41E;
+  background-color:#F8E41E;
+  font-family:Arial, sans-serif;
+  font-weight: bolder;
+  font-kerning: 3px;
+
+  font-size: 36px;
+  height: 100px;
+  text-align: center;
+} */
 .header {
   width: 100%;
   height: 400px;
@@ -10,6 +23,7 @@
   border-color: #b3ddf3; */
   background-color:  #f90f00;
   border-color:  #f90f00;
+  transition: none;
 }
 #comments-page {
   max-width: 1200px;
