@@ -8,6 +8,7 @@ var options = {
   apiKey: "AIzaSyBcHGLeUR1F3qAxIajfHnA6Keusx1e-3SA",
   formatter: null
 };
+
 var geocoder = NodeGeocoder(options);
 
 module.exports = function(app) {
