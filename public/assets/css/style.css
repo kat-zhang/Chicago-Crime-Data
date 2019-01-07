@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   * {
     background-color: #b3ddf3;
   } 
@@ -49,3 +50,17 @@
 }
 
 /* #f90f00 */
+=======
+* {
+  background-color: #ffffff;
+}
+.header {
+  width: 100%;
+  min-height: 300px;
+}
+
+#chartdiv {
+  width: 100%;
+  min-height: 500px;
+}
+>>>>>>> master
