@@ -33,8 +33,7 @@ module.exports = function(app) {
 
   app.get("/comments", function(req, res) {
     db.Comment.findAll({}).then(function(data) {
-     console.log("FSDKLJFSDF")
-     console.log(data[0].author);
+     console.log("FSDKLJFSDF");
       res.render("comments", 
       {comments:data}
        );
