@@ -1,5 +1,5 @@
   * {
-    background-color: #ffffff;
+    background-color: #b3ddf3;
   } 
 
 /* #project-title {
@@ -19,9 +19,9 @@
   height: 400px;
 }
 .btn-primary {
-  /* background-color: #b3ddf3;
-  border-color: #b3ddf3; */
-  background-color:  #f90f00;
+
+  border-color:  #f90f00;
+  background-color: ;
   border-color:  #f90f00;
   transition: none;
 }
@@ -29,15 +29,22 @@
   max-width: 1200px;
   align-content: center;
   margin: auto;
+ 
 }
 
-#new-comment {
-  background-color: #b3ddf3;
+.new-comment {
+  background-color: white;
+  width: 45%;
+  padding-left: 50px;
+  margin: auto;
+  
+
 }
-#comment-poster {
+.comment-author {
   font-weight: bold;
+
 }
-#comment-text {
+.comment-text {
 
 }
 

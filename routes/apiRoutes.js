@@ -12,7 +12,7 @@ var geocoder = NodeGeocoder(options);
 
 module.exports = function(app) {
   app.post("/api/comments", function(req, res) {
-    console.log("New comment", req.body);
+    console.log("New comment",req.body);
     db.Comment.create({
       author: req.body.author,
       comment: req.body.comment
@@ -32,11 +32,11 @@ module.exports = function(app) {
 
   app.get("/comments", function(req, res) {
     db.Comment.findAll({}).then(function(data) {
-    //  console.log(res, "FSDKLJFSDF")
-     console.log(data);
-      res.render("comments", { 
-        comments: data
-       });
+     console.log("FSDKLJFSDF")
+     console.log(data[0].author);
+      res.render("comments", 
+      {comments:data}
+       );
     });
   });
 
