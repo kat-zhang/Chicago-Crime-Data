@@ -28,7 +28,6 @@ module.exports = function(app) {
     db.Comment.findAll({}).then(function(dbComment) {
       res.json(dbComment);
     });
-<<<<<<< HEAD
   });
 
 
@@ -40,8 +39,6 @@ module.exports = function(app) {
       {comments:data}
        );
     });
-=======
->>>>>>> master
   });
 
   app.get("/api/crimes/:crime", function(req, res) {
