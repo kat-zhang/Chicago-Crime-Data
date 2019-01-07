@@ -15,7 +15,9 @@ function getCrimeCount(crime, year) {
         crime: response.data.crime
       });
       yearChartData.push({
-        year: parseInt(response.data.year)
+        count: response.data.count,
+        crime: response.data.crime,
+        year: response.data.year
       });
     })
     .then(function(response) {
@@ -27,7 +29,7 @@ console.log(totalChartData);
 console.log(yearChartData);
 
 for (var i = 0; i < crimeType.length; i++) {
-  getCrimeCount(crimeType[i], year[i]);
+  getCrimeCount(crimeType[i]);
 }
 
 function renderTotalChart() {
@@ -40,6 +42,14 @@ function renderTotalChart() {
 
   chart.data = [
     {
+      crime: totalChartData[4].crime,
+      total: totalChartData[4].totalCount
+    },
+    {
+      crime: totalChartData[2].crime,
+      total: totalChartData[2].totalCount
+    },
+    {
       crime: totalChartData[0].crime,
       total: totalChartData[0].totalCount
     },
@@ -48,16 +58,8 @@ function renderTotalChart() {
       total: totalChartData[1].totalCount
     },
     {
-      crime: totalChartData[2].crime,
-      total: totalChartData[2].totalCount
-    },
-    {
       crime: totalChartData[3].crime,
       total: totalChartData[3].totalCount
-    },
-    {
-      crime: totalChartData[4].crime,
-      total: totalChartData[4].totalCount
     }
   ];
 
@@ -101,3 +103,17 @@ function renderTotalChart() {
   chart.cursor.lineX.strokeOpacity = 0;
   chart.cursor.lineY.strokeOpacity = 0;
 }
+
+$(".form-inline").submit(function(event) {
+  event.preventDefault();
+  console.log(event);
+  var inputValues = $(":input").serializeArray();
+  var crime = inputValues[0].value;
+  var year = inputValues[1].value;
+  $.ajax({
+    url: `/api/crimes/${crime}/${year}`,
+    type: "get"
+  }).then(function(response) {
+    console.log(response);
+  });
+});
