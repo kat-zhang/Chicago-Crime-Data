@@ -5,9 +5,7 @@
 
 </div>
 <div id="comments-div">
-  {{!-- {{author}} --}}
 {{#each comments}}
-{{!-- {{this.author}} --}}
   	<div class="new-comment">
       <p class="comment-author"> {{this.author}} says:</p>
       <p class="comment-text">{{this.comment}}</p>
@@ -31,7 +29,7 @@
     <textarea type="text" class="auth-comment form-control" id="quo" name="quote" rows="4" cols="40"></textarea>
   </div>
 
- <button id="saveButton" class="btn btn-primary">Post</button>
+ <button id="saveButton" class="btn btn-light">Post</button>
 
 </div>
 
