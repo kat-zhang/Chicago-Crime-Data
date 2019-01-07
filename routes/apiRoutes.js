@@ -13,35 +13,26 @@ var geocoder = NodeGeocoder(options);
 
 module.exports = function(app) {
   app.post("/api/comments", function(req, res) {
-    console.log("New comment",req.body);
+    console.log("New comment", req.body);
     db.Comment.create({
       author: req.body.author,
       comment: req.body.comment
     }).then(function(dbComment) {
       res.json(dbComment);
-    })
+    });
     // db.Comment.create(req.body);
-
   });
 
   app.get("/api/comments", function(req, res) {
     db.Comment.findAll({}).then(function(dbComment) {
       res.json(dbComment);
     });
-<<<<<<< HEAD
   });
-
 
   app.get("/comments", function(req, res) {
     db.Comment.findAll({}).then(function(data) {
-     console.log("FSDKLJFSDF")
-     console.log(data[0].author);
-      res.render("comments", 
-      {comments:data}
-       );
+      res.render("comments", { comments: data });
     });
-=======
->>>>>>> master
   });
 
   app.get("/api/crimes/:crime", function(req, res) {

@@ -1,7 +1,6 @@
 var totalChartData = [];
 var yearChartData = [];
 var crimeType = ["theft", "assault", "battery", "narcotics", "robbery"];
-var year = [2013, 2014, 2015, 2016, 2017, 2018];
 
 function getCrimeCount(crime, year) {
   $.ajax({
@@ -14,20 +13,14 @@ function getCrimeCount(crime, year) {
         totalCount: response.data.count,
         crime: response.data.crime
       });
-      yearChartData.push({
-        count: response.data.count,
-        crime: response.data.crime,
-        year: response.data.year
-      });
     })
     .then(function(response) {
       renderTotalChart();
     });
 }
 
-//Console logs for arrays
+//Console log for total chart
 console.log(totalChartData);
-console.log(yearChartData);
 
 for (var i = 0; i < crimeType.length; i++) {
   getCrimeCount(crimeType[i]);
@@ -107,7 +100,6 @@ function renderTotalChart() {
 
 $(".form-inline").submit(function(event) {
   event.preventDefault();
-  console.log(event);
   var inputValues = $(":input").serializeArray();
   var crime = inputValues[0].value;
   var year = inputValues[1].value;
@@ -116,5 +108,13 @@ $(".form-inline").submit(function(event) {
     type: "get"
   }).then(function(response) {
     console.log(response);
+    yearChartData.push({
+      count: response.data.count,
+      crime: response.data.crime,
+      year: response.data.year
+    });
+    console.log(yearChartData);
   });
 });
+
+function renderYearChart() {}
