@@ -5,23 +5,19 @@
 
 </div>
 <div id="comments-div">
-  {{!-- {{author}} --}}
 {{#each comments}}
-{{!-- {{this.author}} --}}
   	<div class="new-comment">
       <p class="comment-author"> {{this.author}} says:</p>
-      <p class="comment-poster">{{this.comment}}</p>
+      <p class="comment-text">{{this.comment}}</p>
   	</div>
   
 {{/each}}
 </div>
-<hr>
 
 
-<p id="prompt">Please leave your thoughts on this data. Were you suprised to see these numbers? Tell us in a comment :</p>
-<div class= "container">
 
-  {{!-- <form class="create-form"> --}}
+<p id="prompt">Please leave your thoughts on these statistics. Were you suprised to see these numbers? Tell us in a comment :</p>
+<div class= "container comment-form">
 
   <div class="form-group col-md-6">
     <label for="auth">Your Name:</label>
@@ -30,14 +26,11 @@
 
   <div class="form-group col-md-6">
     <label for="quo">Comment:</label>
-    <textarea type="text" class="auth-comment form-control" id="quo" name="quote" rows="8" cols="40"></textarea>
+    <textarea type="text" class="auth-comment form-control" id="quo" name="quote" rows="4" cols="40"></textarea>
   </div>
-
- 
-  {{!-- </form> --}}
 
  <button id="saveButton" class="btn btn-light">Post</button>
 
 </div>
- {{!-- <script src="./assets/js/comments.js"> </script> --}}
+
  <link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>

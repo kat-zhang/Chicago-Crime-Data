@@ -30,7 +30,17 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/comments", function(req, res) {
+    db.Comment.findAll({}).then(function(data) {
+     console.log("FSDKLJFSDF");
+      res.render("comments", 
+      {comments:data}
+       );
+    });
+  });
+
   app.get("/api/crimes/:crime", function (req, res) {
+
     db.Crime.findAndCountAll({
       where: {
         PrimaryType: req.params.crime,
@@ -108,7 +118,6 @@ module.exports = function (app) {
   app.get('/crimePoints', function (req, res) {
     res.json(arr);
   })
-
 
   app.get("/crime", function (req, res) {
     res.json(crime)
