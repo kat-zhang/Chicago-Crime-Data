@@ -1,36 +1,43 @@
-<h1></h1>
 
-<div id="pg-container"> 
 
-<ul id="commentsdiv">
-  {{!-- {{#each comments}} --}}
-  	<div id ="newComment">
-  		<p><span class="label" id="commentNum">Comment #:</span> {{this.id}}</p>
-      <p><span class="label" id="commentPoster"></span> {{this.author}} says:</p>
-      <p><span class="label" id="commentText"></span> {{this.comment}}</p>
+<div id="comments-page"  > 
+<h1 id="comments-title">Comments</h1>
+
+</div>
+<div id="comments-div">
+  {{!-- {{author}} --}}
+{{#each comments}}
+{{!-- {{this.author}} --}}
+  	<div class="new-comment">
+      <p class="comment-author"> {{this.author}} says:</p>
+      <p class="comment-poster">{{this.comment}}</p>
   	</div>
-  {{!-- {{/comments}} --}}
-</ul>
+  
+{{/each}}
+</div>
 <hr>
 
-<h4> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-<p>Your comment:</p>
 
+<p id="prompt">Please leave your thoughts on this data. Were you suprised to see these numbers? Tell us in a comment :</p>
+<div class= "container">
 
-<form class="create-form">
+  {{!-- <form class="create-form"> --}}
 
-  <div class="form-group">
-    <label for="auth">Name:</label>
-    <input type="text" id="auth" name="author">
+  <div class="form-group col-md-6">
+    <label for="auth">Your Name:</label>
+    <input type="text" class="auth-name form-control" id="auth" name="author">
   </div>
 
-  <div class="form-group">
+  <div class="form-group col-md-6">
     <label for="quo">Comment:</label>
-    <textarea type="text" id="quo" name="quote" rows="8" cols="40"></textarea>
+    <textarea type="text" class="auth-comment form-control" id="quo" name="quote" rows="8" cols="40"></textarea>
   </div>
 
  
-</form>
- <button id="saveButton" class="btn btn-primary">Submit</button>
+  {{!-- </form> --}}
+
+ <button id="saveButton" class="btn btn-primary">Post</button>
 
 </div>
+ {{!-- <script src="./assets/js/comments.js"> </script> --}}
+ <link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>

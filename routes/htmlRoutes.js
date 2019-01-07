@@ -9,7 +9,12 @@ module.exports = function (app) {
     app.get("/map", function (req, res) {
         res.render("map");
     });
-    app.get("/comments", function (req, res) {
-        res.render("comments");
-    });
+    // app.get("/comments", function (req, res) {
+    //     res.render("comments");
+    //     // res.render("index", { comments: data });
+    //     // res.render("comment", comment[i]);
+    //     // res.render("author", author[i]);
+    // });
+
+
 }

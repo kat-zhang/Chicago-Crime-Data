@@ -2,8 +2,14 @@ $(document).ready(function() {
    
     console.log('PAGE LOADED')
 
-    $('#saveButton').on('click', function() {
+
+  
+    
+
+    $('#saveButton').click( function() {
         event.preventDefault();
+        location.reload();
+        // alert("clicked")
         var comment = {
             author: $('#auth').val(),
             comment: $('#quo').val(),
@@ -11,17 +17,16 @@ $(document).ready(function() {
 
         $.ajax({
             url: "/api/comments",
-            type: "post",
+            type: "POST",
             data: comment
           }).then(function(response) {
-            console.log("Comment posted"); 
+// alert("posted")
+location.reload();
         });
+        
         
         
     })
 
-    function getComment () {
-        $.a
-    }
 
 });
