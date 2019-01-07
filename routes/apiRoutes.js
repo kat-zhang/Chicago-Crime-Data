@@ -23,6 +23,16 @@ module.exports = function(app) {
     })
   });
 
+  // app.get("/comments", function(req, res) {
+  //   db.Comment.findAll({}).then(function(dbComment) {
+  //     if (err) {
+  //       return res.status(500).end();
+  //     }
+  
+  //     res.render("index", { comments: data });
+  //   });
+  // });
+
   app.get("/api/crimes/:crime", function(req, res) {
     db.Crime.findAndCountAll({
       where: {

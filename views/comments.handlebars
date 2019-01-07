@@ -1,26 +1,29 @@
-<h1></h1>
 
-<div id="pg-container"> 
 
-<ul id="commentsdiv">
-  {{!-- {{#each comments}} --}}
-  	<div id ="newComment">
-  		<p><span class="label" id="commentNum">Comment #:</span> {{this.id}}</p>
-      <p><span class="label" id="commentPoster"></span> {{this.author}} says:</p>
-      <p><span class="label" id="commentText"></span> {{this.comment}}</p>
+<div id="comments-page"  > 
+<h1 id="comments-title">Comments</h1>
+
+<ul id="comments-div">
+ {{!-- {{#each comment}} --}}
+ <li>
+  	<div>
+      <p><span class="label" id="comment-poster"></span> {{this.author}} says:</p>
+      <p><span class="label" id="comment-text"></span> {{this.comment}}</p>
+      {{!-- <p><span class="label" id="comment-text"></span> sdfsdfsfd </p> --}}
   	</div>
-  {{!-- {{/comments}} --}}
+  <li>
+
 </ul>
 <hr>
 
-<h4> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-<p>Your comment:</p>
+
+<p id="prompt">Please leave your thoughts on this data. Were you suprised to see these numbers? Tell us in a comment :</p>
 
 
 <form class="create-form">
 
   <div class="form-group">
-    <label for="auth">Name:</label>
+    <label for="auth">Your Name:</label>
     <input type="text" id="auth" name="author">
   </div>
 
@@ -31,6 +34,6 @@
 
  
 </form>
- <button id="saveButton" class="btn btn-primary">Submit</button>
+ <button id="saveButton" class="btn btn-primary">Post</button>
 
 </div>

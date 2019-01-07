@@ -5,3 +5,14 @@
   width: 100%;
   height: 400px;
 }
+
+#comments-page {
+  max-width: 1200px;
+  align-content: center;
+  margin: auto;
+}
+
+li {
+  background-color: #b3ddf3;
+
+}

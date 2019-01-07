@@ -12,4 +12,17 @@ module.exports = function (app) {
     app.get("/comments", function (req, res) {
         res.render("comments");
     });
+
+    // app.get("/comments", function (req, res) {
+    //     db.Crime.findAll({}).then(function(dbComments){
+    //         res.render("comments");
+    //         res.json({
+    //             data: {
+    //                 comment: req.params.comment,
+    //                 author: req.params.author
+    //             }
+    //         })
+    //     })
+    //     res.render("comments");
+    // });
 }
