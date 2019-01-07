@@ -13,8 +13,14 @@ var geocoder = NodeGeocoder(options);
 module.exports = function(app) {
   app.post("/api/comments", function(req, res) {
     console.log("WE ARE IN COMMENTS ROUTE!!", req.body);
+    db.Comment.create({
+      author: req.body.author,
+      comment: req.body.comment
+    }).then(function(dbComment) {
+      res.json(dbComment);
+    })
+    // db.Comment.create(req.body);
 
-    db.Comment.create(req.body);
   });
 
   app.get("/api/comments", function (req, res) {

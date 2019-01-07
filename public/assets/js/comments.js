@@ -20,8 +20,5 @@ $(document).ready(function() {
         
     })
 
-    function getComment () {
-        $.a
-    }
 
 });
