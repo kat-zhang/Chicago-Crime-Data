@@ -5,14 +5,26 @@
   width: 100%;
   height: 400px;
 }
-
+.btn-primary {
+  /* background-color: #b3ddf3;
+  border-color: #b3ddf3; */
+  background-color:  #f90f00;
+  border-color:  #f90f00;
+}
 #comments-page {
   max-width: 1200px;
   align-content: center;
   margin: auto;
 }
 
-li {
+#new-comment {
   background-color: #b3ddf3;
+}
+#comment-poster {
+  font-weight: bold;
+}
+#comment-text {
 
 }
+
+/* #f90f00 */

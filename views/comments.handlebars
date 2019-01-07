@@ -2,14 +2,27 @@
 
 <div id="comments-page"  > 
 <h1 id="comments-title">Comments</h1>
+{{!-- <style>
+* {
+    background-color: #ffffff;
+  } 
+.chiFlag {
+  width: 100%;
+  height: 15%;
+  opacity: .7;
+  margin: auto;
+}
+</style> --}}
 
+{{!-- <div class="header">
+    <img class="chiFlag" src="https://cdn.allwallpaper.in/wallpapers/2000x1333/6092/chicago-flag-2000x1333-wallpaper.jpg" alt="ChicagoFlag">
+</div> --}}
 <div id="comments-div">
 {{#each comments}}
 
   	<div class="new-comment">
       <p><span class="label" id="comment-poster"></span> {{this.author}} says:</p>
       <p><span class="label" id="comment-text"></span> {{this.comment}}</p>
-
   	</div>
   
 {{/each}}
@@ -18,23 +31,24 @@
 
 
 <p id="prompt">Please leave your thoughts on this data. Were you suprised to see these numbers? Tell us in a comment :</p>
+<div class= "container">
 
+  <form class="create-form">
 
-<form class="create-form">
-
-  <div class="form-group">
+  <div class="form-group col-md-6">
     <label for="auth">Your Name:</label>
-    <input type="text" class="auth-name" id="auth" name="author">
+    <input type="text" class="auth-name form-control" id="auth" name="author">
   </div>
 
-  <div class="form-group">
+  <div class="form-group col-md-6">
     <label for="quo">Comment:</label>
-    <textarea type="text" class="auth-comment" id="quo" name="quote" rows="8" cols="40"></textarea>
+    <textarea type="text" class="auth-comment form-control" id="quo" name="quote" rows="8" cols="40"></textarea>
   </div>
 
  
-</form>
+  </form>
 
  <button id="saveButton" class="btn btn-primary">Post</button>
 
 </div>
+ <script src="./assets/js/comments.js"> </script>

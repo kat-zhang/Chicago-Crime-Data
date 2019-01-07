@@ -29,6 +29,8 @@ module.exports = function(app) {
     });
   });
 
+ 
+
   // app.get("/comments", function(req, res) {
   //   db.Comment.findAll({}).then(function(dbComment) {
   //     if (err) {
