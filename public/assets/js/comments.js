@@ -4,6 +4,7 @@ $(document).ready(function() {
 
     $('#saveButton').on('click', function() {
         event.preventDefault();
+        location.reload();
         var comment = {
             author: $('#auth').val(),
             comment: $('#quo').val(),
@@ -14,8 +15,9 @@ $(document).ready(function() {
             type: "post",
             data: comment
           }).then(function(response) {
-            console.log("Comment posted"); 
+
         });
+        
         
         
     })

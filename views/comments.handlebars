@@ -3,17 +3,17 @@
 <div id="comments-page"  > 
 <h1 id="comments-title">Comments</h1>
 
-<ul id="comments-div">
- {{!-- {{#each comment}} --}}
- <li>
-  	<div>
+<div id="comments-div">
+{{#each comments}}
+
+  	<div class="new-comment">
       <p><span class="label" id="comment-poster"></span> {{this.author}} says:</p>
       <p><span class="label" id="comment-text"></span> {{this.comment}}</p>
-      {{!-- <p><span class="label" id="comment-text"></span> sdfsdfsfd </p> --}}
-  	</div>
-  <li>
 
-</ul>
+  	</div>
+  
+{{/each}}
+</div>
 <hr>
 
 
@@ -24,16 +24,17 @@
 
   <div class="form-group">
     <label for="auth">Your Name:</label>
-    <input type="text" id="auth" name="author">
+    <input type="text" class="auth-name" id="auth" name="author">
   </div>
 
   <div class="form-group">
     <label for="quo">Comment:</label>
-    <textarea type="text" id="quo" name="quote" rows="8" cols="40"></textarea>
+    <textarea type="text" class="auth-comment" id="quo" name="quote" rows="8" cols="40"></textarea>
   </div>
 
  
 </form>
+
  <button id="saveButton" class="btn btn-primary">Post</button>
 
 </div>

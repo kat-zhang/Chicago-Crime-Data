@@ -11,6 +11,8 @@ module.exports = function (app) {
     });
     app.get("/comments", function (req, res) {
         res.render("comments");
+        // res.render("comments", comment[i]);
+        // res.render("author", author[i]);
     });
 
     // app.get("/comments", function (req, res) {
