@@ -10,10 +10,10 @@ module.exports = function(app) {
     res.render("map");
   });
 
-  // app.get("/comments", function (req, res) {
-  //     res.render("comments");
-  //     // res.render("index", { comments: data });
-  //     // res.render("comment", comment[i]);
-  //     // res.render("author", author[i]);
-  // });
+  //   app.get("/comments", function (req, res) {
+  //       res.render("comments");
+  //       // res.render("index", { comments: data });
+  //       // res.render("comment", comment[i]);
+  //       // res.render("author", author[i]);
+  //   });
 };
