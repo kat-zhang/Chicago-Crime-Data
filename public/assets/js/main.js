@@ -19,6 +19,7 @@ function getCrimeCount(crime, year) {
       });
     })
     .then(function(response) {
+      
       renderTotalChart();
     });
 }
@@ -32,7 +33,9 @@ for (var i = 0; i < crimeType.length; i++) {
 
 function renderTotalChart() {
   am4core.useTheme(am4themes_animated);
-
+  setTimeout(function(){
+    $('#chartLoader').hide()
+  },2000)
   var chart = am4core.create(
     document.getElementById("chartdiv"),
     am4charts.XYChart3D
@@ -128,7 +131,10 @@ $(".form-inline").submit(function(event) {
 
   function renderYearChart() {
     am4core.useTheme(am4themes_animated);
-
+    setTimeout(function(){
+      $('#chartLoader').hide()
+    },2000)
+    
     var chart = am4core.create(
       document.getElementById("chart2div"),
       am4charts.XYChart3D
