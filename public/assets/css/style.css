@@ -112,4 +112,30 @@ body {
   background-color: #fff;
   border-radius: 20px;
 }
-
+#map{
+  height: 600px; 
+  width: 100%;
+}
+.mapBtn{
+ margin-top: 25px;
+ margin-left: 45%;
+ margin-bottom: 25px;
+}
+.headStat{
+  font-size: 40px;
+  font-weight: bold;
+  color: #f90f00;
+  text-decoration: underline;
+  background-color: #fff;
+  text-align: center;
+}
+.baseStats {
+  font-size: 30px;
+  text-align: center;
+}
+.statNumber{
+  color: #f90f00;
+}
+#bestWorst{
+  text-align: center;
+}
