@@ -1,26 +1,79 @@
+body {
+    background-color: #b3ddf3;
+  } 
+
+.form-control {
+  border-color:  #f90f00;
+}
+.header {
+  width: 100%;
+  height: 400px;
+}
+
 #comments-page {
-  max-width: 1200px;
+  width: 100%;
   align-content: center;
   margin: auto;
+}
+#prompt {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 20px;
+
+}
+label {
+
+  font-size: 16px;
+  font-weight: bold;
+}
+.comment-form {
+
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+#comments-div {
+  margin-top: 50px;
+  background-color: #b3ddf3;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.form-group {
+background-color: #b3ddf3;
 }
 
 .new-comment {
   background-color: white;
   width: 45%;
-  padding-left: 50px;
   margin: auto;
+<<<<<<< HEAD
+=======
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 15px;
+
+
+>>>>>>> master
 }
 .comment-author {
   font-weight: bold;
 }
+<<<<<<< HEAD
 /* .comment-text {
 
 } */
+=======
+>>>>>>> master
 body {
   background-color: #b3ddf3;
   font-family: "Staatliches", cursive;
 }
 
+.header {
+  width: 100%;
+  min-height: 300px;
+}
 .heading {
   font-size: 100px;
   text-align: center;
@@ -31,6 +84,7 @@ body {
   background-color: #b3ddf3;
   color: #2a110a;
   background-position: center;
+
 }
 
 .introText {
@@ -67,6 +121,7 @@ body {
   background-color: #fff;
   border-radius: 20px;
 }
+<<<<<<< HEAD
 
 /* .loader and @keyframes from w3schools */
 /* border and border-top colors were changed to fit astetic */
@@ -90,3 +145,32 @@ body {
     transform: rotate(360deg);
   }
 }
+=======
+#map{
+  height: 600px; 
+  width: 100%;
+}
+.mapBtn{
+ margin-top: 25px;
+ margin-left: 45%;
+ margin-bottom: 25px;
+}
+.headStat{
+  font-size: 40px;
+  font-weight: bold;
+  color: #f90f00;
+  text-decoration: underline;
+  background-color: #fff;
+  text-align: center;
+}
+.baseStats {
+  font-size: 30px;
+  text-align: center;
+}
+.statNumber{
+  color: #f90f00;
+}
+#bestWorst{
+  text-align: center;
+}
+>>>>>>> master
