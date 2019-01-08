@@ -2,6 +2,10 @@ var totalChartData = [];
 var yearChartData = [];
 var crimeType = ["theft", "assault", "battery", "narcotics", "robbery"];
 
+$(document).ready(function() {
+  $("#chart2div").hide();
+});
+
 function getCrimeCount(crime, year) {
   $.ajax({
     url: "/api/crimes/" + crime,
@@ -115,6 +119,97 @@ $(".form-inline").submit(function(event) {
     });
     console.log(yearChartData);
   });
-});
 
-function renderYearChart() {}
+  $("#render").on("click", function() {
+    renderYearChart();
+    $("#chartdiv").hide();
+    $("#chart2div").show();
+  });
+
+  function renderYearChart() {
+    am4core.useTheme(am4themes_animated);
+
+    var chart = am4core.create(
+      document.getElementById("chart2div"),
+      am4charts.XYChart3D
+    );
+
+    chart.data = [
+      //Crime 1
+      {
+        crime: yearChartData[0].crime,
+        year2018: yearChartData[0].count
+      },
+      {
+        crime: yearChartData[1].crime,
+        year2017: yearChartData[1].count
+      },
+      {
+        crime: yearChartData[2].crime,
+        year2016: yearChartData[2].count
+      },
+      //Crime 2
+      {
+        crime: yearChartData[3].crime,
+        year2018: yearChartData[3].count
+      },
+      {
+        crime: yearChartData[4].crime,
+        year2017: yearChartData[4].count
+      },
+      {
+        crime: yearChartData[5].crime,
+        year2016: yearChartData[5].count
+      },
+      //Crime 3
+      {
+        crime: yearChartData[6].crime,
+        year2018: yearChartData[6].count
+      },
+      {
+        crime: yearChartData[7].crime,
+        year2017: yearChartData[7].count
+      },
+      {
+        crime: yearChartData[8].crime,
+        year2016: yearChartData[8].count
+      }
+    ];
+    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "crime";
+    categoryAxis.renderer.grid.template.location = 0;
+    categoryAxis.renderer.minGridDistance = 30;
+
+    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.title.text = "Crime Yearly Comparision";
+    valueAxis.renderer.labels.template.adapter.add("text", function(text) {
+      return text;
+    });
+
+    // Create series
+    var series = chart.series.push(new am4charts.ColumnSeries3D());
+    series.dataFields.valueY = "year2018";
+    series.dataFields.categoryX = "crime";
+    series.name = "Year 2018";
+    series.clustered = false;
+    series.columns.template.tooltipText =
+      "Total Crimes {category} (2018): [bold]{valueY}[/]";
+    series.columns.template.fillOpacity = 0.9;
+
+    var series2 = chart.series.push(new am4charts.ColumnSeries3D());
+    series2.dataFields.valueY = "year2017";
+    series2.dataFields.categoryX = "crime";
+    series2.name = "Year 2017";
+    series2.clustered = false;
+    series2.columns.template.tooltipText =
+      "Total Crimes {category} (2017): [bold]{valueY}[/]";
+
+    var series3 = chart.series.push(new am4charts.ColumnSeries3D());
+    series3.dataFields.valueY = "year2016";
+    series3.dataFields.categoryX = "crime";
+    series3.name = "Year 2016";
+    series3.clustered = false;
+    series3.columns.template.tooltipText =
+      "Total Crimes {category} (2016): [bold]{valueY}[/]";
+  }
+});
