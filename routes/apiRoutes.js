@@ -11,42 +11,36 @@ var options = {
 
 var geocoder = NodeGeocoder(options);
 
-module.exports = function (app) {
-  app.post("/api/comments", function (req, res) {
+module.exports = function(app) {
+  app.post("/api/comments", function(req, res) {
     console.log("New comment", req.body);
     db.Comment.create({
       author: req.body.author,
       comment: req.body.comment
-    }).then(function (dbComment) {
+    }).then(function(dbComment) {
       res.json(dbComment);
-    })
-    // db.Comment.create(req.body);
-
+    });
   });
 
-  app.get("/api/comments", function (req, res) {
-    db.Comment.findAll({}).then(function (dbComment) {
+  app.get("/api/comments", function(req, res) {
+    db.Comment.findAll({}).then(function(dbComment) {
       res.json(dbComment);
     });
   });
 
   app.get("/comments", function(req, res) {
     db.Comment.findAll({}).then(function(data) {
-     console.log("FSDKLJFSDF");
-      res.render("comments", 
-      {comments:data}
-       );
+      res.render("comments", { comments: data });
     });
   });
 
-  app.get("/api/crimes/:crime", function (req, res) {
-
+  app.get("/api/crimes/:crime", function(req, res) {
     db.Crime.findAndCountAll({
       where: {
         PrimaryType: req.params.crime,
         Arrest: "TRUE"
       }
-    }).then(function (dbCrimes) {
+    }).then(function(dbCrimes) {
       console.log(dbCrimes.count);
       res.json({
         data: {
@@ -54,11 +48,10 @@ module.exports = function (app) {
           crime: req.params.crime
         }
       });
-      // console.log(res.data.crime);
     });
   });
 
-  app.get("/api/crimes/:crime/:year", function (req, res) {
+  app.get("/api/crimes/:crime/:year", function(req, res) {
     console.log("this route is working");
     console.log(req.params.crime, req.params.year);
     db.Crime.findAndCountAll({
@@ -67,7 +60,7 @@ module.exports = function (app) {
         Year: req.params.year,
         Arrest: "TRUE"
       }
-    }).then(function (dbCrimes) {
+    }).then(function(dbCrimes) {
       res.json({
         data: {
           count: dbCrimes.count,
@@ -80,13 +73,13 @@ module.exports = function (app) {
 
   var crime = [];
   var arr = [];
-  app.post("/test", function (req, res) {
-    var address = req.body.address
-    geocoder.geocode(address, function (err, data) {
+  app.post("/test", function(req, res) {
+    var address = req.body.address;
+    geocoder.geocode(address, function(err, data) {
       if (err || !data.length) {
         console.log(err);
-        req.flash('error', 'Invalid address');
-        return res.redirect('back');
+        req.flash("error", "Invalid address");
+        return res.redirect("back");
       }
       var lat = data[0].latitude;
       var lng = data[0].longitude;
@@ -97,9 +90,9 @@ module.exports = function (app) {
           zipCode: parseInt(zip)
         },
         limit: 20
-      }).then(function (data) {
+      }).then(function(data) {
         arr = [];
-        crime = []
+        crime = [];
         for (var i = 0; i < data.length; i++) {
           var Lat = data[i].Latitude;
           var Lng = data[i].Longitude;
@@ -110,16 +103,16 @@ module.exports = function (app) {
           var arrest = data[i].Arrest;
           crime.push({ type, description, location, arrest });
         }
-      })
+      });
       res.json({ lat, lng });
-    })
-  })
+    });
+  });
 
-  app.get('/crimePoints', function (req, res) {
+  app.get("/crimePoints", function(req, res) {
     res.json(arr);
-  })
+  });
 
-  app.get("/crime", function (req, res) {
-    res.json(crime)
+  app.get("/crime", function(req, res) {
+    res.json(crime);
   });
 };
