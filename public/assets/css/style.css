@@ -47,7 +47,7 @@ body {
 }
 #chartdiv,
 #chart2div {
-  width: 60%;
+  max-width: 695px;
   height: 300px;
   margin: auto;
   background-color: #fff;
