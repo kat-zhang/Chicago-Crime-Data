@@ -4,6 +4,7 @@ var crimeType = ["theft", "assault", "battery", "narcotics", "robbery"];
 
 $(document).ready(function() {
   $("#chart2div").hide();
+  $("#chart2Loader").hide();
 });
 
 function getCrimeCount(crime, year) {
@@ -127,14 +128,15 @@ $(".form-inline").submit(function(event) {
     renderYearChart();
     $("#chartdiv").hide();
     $("#chart2div").show();
+    $("#chart2Loader").show();
   });
 
   function renderYearChart() {
     am4core.useTheme(am4themes_animated);
     setTimeout(function(){
-      $('#chartLoader').hide()
+      $('#chart2Loader').hide()
     },2000)
-    
+
     var chart = am4core.create(
       document.getElementById("chart2div"),
       am4charts.XYChart3D
