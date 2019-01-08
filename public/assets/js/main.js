@@ -170,7 +170,7 @@ $(".form-inline").submit(function(event) {
       },
       {
         crime: yearChartData[7].crime,
-        year2015: yearChartData[7].count
+        year2014: yearChartData[7].count
       }
     ];
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
