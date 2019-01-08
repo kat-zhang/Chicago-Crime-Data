@@ -134,3 +134,8 @@ label {
 #bestWorst {
   text-align: center;
 }
+#tomLoader {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
