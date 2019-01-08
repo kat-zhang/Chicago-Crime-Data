@@ -2,10 +2,12 @@ var db = require("../models");
 
 var NodeGeocoder = require("node-geocoder");
 
+var keys = require("../keys.js");
+
 var options = {
   provider: "google",
   httpAdapter: "https",
-  apiKey: "AIzaSyBGNmHe6uJJVS1Ej2jiCn277KwPW44bRqw",
+  apiKey: process.env.GEOCODER_API_KEY || keys.geocoder.id,
   formatter: null
 };
 
