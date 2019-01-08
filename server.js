@@ -6,7 +6,6 @@
 // =============================================================
 // Sets up the Express App
 // =============================================================
-require('dotenv').config()
 var express = require("express");
 var bodyparser = require("body-parser");
 
