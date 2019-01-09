@@ -32,8 +32,8 @@ We also encourage users to share and discuss their thoughts on or what they have
 
 ### Contributers
 
-Andrea Minhas [@andreaMT15](https://github.com/andreaMT15)
-Kathy Zhang [@kat-zhang](https://github.com/kat-zhang)
-Bharti Tagra [@Btagra](https://github.com/Btagra)
-Phillip Sturm [@PhillipSturm](https://github.com/PhillipSturm)
-Thomas Roman [@tomroman](https://github.com/tomroman)
+* Andrea Minhas [@andreaMT15](https://github.com/andreaMT15)
+* Kathy Zhang [@kat-zhang](https://github.com/kat-zhang)
+* Bharti Tagra [@Btagra](https://github.com/Btagra)
+* Phillip Sturm [@PhillipSturm](https://github.com/PhillipSturm)
+* Thomas Roman [@tomroman](https://github.com/tomroman)
