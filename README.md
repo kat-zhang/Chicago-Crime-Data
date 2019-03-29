@@ -12,7 +12,7 @@ A map marked with pins dropped on the locations of these crimes is displayed alo
 We also encourage users to share and discuss their thoughts on or what they have learned from the data.  
 
 
-##### [View Application](https://kat-zhang.github.io/Intergalatic-Word-Guess/ "Link to Application")
+##### [View Application](http://glacial-beach-88138.herokuapp.com/ "Link to Application")
 
 ### Featured Technology
 * Handlebars
